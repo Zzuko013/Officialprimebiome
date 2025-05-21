@@ -37,92 +37,129 @@
   
   
 </head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popup Funcionando</title>
-  <style>
-    /* ======================
-       CSS do Popup
-    ======================= */
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .popup-box {
-      background-color: white;
-      padding: 30px 20px;
-      border-radius: 8px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      position: relative;
-      animation: fadeIn 0.4s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .popup-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 22px;
-      color: #000;
-      cursor: pointer;
-    }
-
-    .popup-box h2 {
-      margin-bottom: 10px;
-      color: #1b1565;
-    }
-
-    .popup-box p {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .popup-button {
-      padding: 10px 20px;
-      background-color: #1b1565;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .popup-button:hover {
-      background-color: #bfa37c;
-    }
-  </style>
-</head>
-
-<body>
-
-  <h1>Bem-vindo ao meu site</h1>
-  <p>Conteúdo da página...</p>
-
-  <!-- Popup -->
-  <div class="popup-overlay" id="popup">
-    <div class="popup-box">
-      <button class="popup-close" onclick="closePopup()">×</button>
-      <h2>🎉 Oferta Especial!</h2>
-      <p>Cadastre-se e receba um bônus exclusivo no seu e-mail.</p>
-      <button class="popup-button" onclick="closePopup()">Quero Participar</button>
+    <!-- ======= Popup Country Selector ======= -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="redirect()">×</button>
+    <h2>Select your country</h2>
+    <p>Please choose your country to continue:</p>
+    <div class="popup-buttons">
+      <button onclick="redirect()">United States</button>
+      <button onclick="redirect()">Germany</button>
+      <button onclick="redirect()">United Kingdom</button>
+      <button onclick="redirect()">Canada</button>
     </div>
   </div>
+</div>
 
+<style>
+  .popup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup-box {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  .popup-box h2 {
+    margin-bottom: 10px;
+    color: #1b1565;
+  }
+
+  .popup-box p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .popup-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .popup-buttons button {
+    padding: 10px 20px;
+    background-color: #1b1565;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .popup-buttons button:hover {
+    background-color: #bfa37c;
+  }
+</style>
+
+<script>
+  // Delay de 2 segundos antes de aparecer
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      document.getElementById('popup').style.display = 'flex';
+    }, 2000);
+  });
+
+  // Redirecionamento ao clicar
+  function redirect() {
+    window.location.href = 'https://getprimebiome.com/text.php?affiliate=vincxxrr';
+  }
+</script>
+<!-- ======= Fim Popup ======= -->
+
+    <div className="popup-overlay">
+      <div className="popup-box">
+        <button className="popup-close" onClick={handleSelectCountry}>×</button>
+        <h2>Select your country</h2>
+        <p>Please choose your country to continue:</p>
+        <div className="popup-buttons">
+          <button onClick={handleSelectCountry}>United States</button>
+          <button onClick={handleSelectCountry}>Germany</button>
+          <button onClick={handleSelectCountry}>United Kingdom</button>
+          <button onClick={handleSelectCountry}>Canada</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PopupCountrySelector;
   <script>
     // Exibir popup ao carregar a página
     window.addEventListener('load', function() {
