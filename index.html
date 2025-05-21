@@ -37,7 +37,9 @@
   
   
 </head>
-    <!-- ======= Popup Country Selector ======= -->
+</body>
+</html>
+<!-- ======= Popup Country Selector ======= -->
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
     <button class="popup-close" onclick="redirect()">×</button>
@@ -142,38 +144,6 @@
   }
 </script>
 <!-- ======= Fim Popup ======= -->
-
-    <div className="popup-overlay">
-      <div className="popup-box">
-        <button className="popup-close" onClick={handleSelectCountry}>×</button>
-        <h2>Select your country</h2>
-        <p>Please choose your country to continue:</p>
-        <div className="popup-buttons">
-          <button onClick={handleSelectCountry}>United States</button>
-          <button onClick={handleSelectCountry}>Germany</button>
-          <button onClick={handleSelectCountry}>United Kingdom</button>
-          <button onClick={handleSelectCountry}>Canada</button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default PopupCountrySelector;
-  <script>
-    // Exibir popup ao carregar a página
-    window.addEventListener('load', function() {
-      document.getElementById('popup').style.display = 'flex';
-    });
-
-    // Função para fechar popup
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
-  </script>
-
-</body>
-</html>
   <section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-23">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
